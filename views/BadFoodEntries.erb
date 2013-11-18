@@ -1,0 +1,16 @@
+<h1> Here is the listing of bad food </h1>
+
+<% @bfes.each do |bfe| %>
+   <ol>
+    <li>
+        <%= bfe.dishName %> |
+        <%= bfe.ateWhere %> |
+        <%= bfe.firstTime %> |
+        <%= bfe.symptoms %> |
+        <%= bfe.badIngredient %> |
+        <%= bfe.comments %> 
+    </li>
+    </ol>
+
+<%end%>
+
