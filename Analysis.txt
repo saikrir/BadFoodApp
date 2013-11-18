@@ -1,0 +1,14 @@
+Data Needs:Web page should be capable of capturing following fields
+	- Dish Name
+	- Where did you have
+	- When did you have
+	- Is it First time ?
+	- Symtoms
+	- Possible bad ingredient
+	- Comments
+
+UI/Navigation
+
+	- Home Page: A Page containing a brief description of what the site is about and some photos of foul food and DIARRHEA. It should also have links to a form which lets you add bad food columns
+	- Currently Know Bad Foods: This is a listing of all bad foods known so far.
+	- Newly Discovered food: A form listing all know bad food.
