@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title> BadFood App </title>
+		<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/ui-darkness/jquery-ui-1.10.3.custom.min.css" media="all" />
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/kickstart.js"></script>
+    </head>
+
+    <body>
+		<div class="flex grid">
+			<div class="col_12">
+				<h2> Bad Food Entries </h2>
+			</div>
+		</div>
+		<div class="col_4">
+			<table class="striped" id="entryContainer" cellspacing="0" cellpadding="0">
+				<tr>
+					<td> Dish Name </td>
+					<td> Where ? </td>
+					<td> When ? </td>
+					<td> Bad Ingredient </td>
+				</tr>
+			</table>
+		</div>	
+    </body>
+	
+	<script id="myTemplate" type="myTemplate">
+		<tr>
+			<td> {{dishName}} </td>
+			<td> {{ateWhere}} </td>
+			<td> {{ateWhen}} </td>
+			<td> {{badIngredient}} </td>
+		</tr>
+	</script>
+	<script>
+		(
+			function(){
+				var container = $("#entryContainer tbody");
+				$.getJSON('/BadFoodEntries.json', function(entries){	
+						$.each(entries, function(index, entry){
+							var template = $("#myTemplate").html();
+							template = template.replace(/{{dishName}}/ig, entry.dishName);
+							template = template.replace(/{{ateWhere}}/ig, entry.ateWhere);
+							template = template.replace(/{{ateWhen}}/ig, entry.ateWhen);
+							template = template.replace(/{{badIngredient}}/ig, entry.badIngredient);							
+							container.append(template);
+						});
+					
+				});
+			}
+		)();
+	</script>
+
+</html>

@@ -4,7 +4,7 @@ require 'dm-mysql-adapter'
 require 'dm-timestamps'
 require 'dm-validations'
 
-DataMapper.setup( :default, "mysql://web_admin:tempid1@raspberrypi/BAD_FOOD" )
+DataMapper.setup( :default, "mysql://web_admin:tempid1@DISKSTATION/BAD_FOOD" )
 
 
     class BadFoodEntry
@@ -23,4 +23,6 @@ DataMapper.setup( :default, "mysql://web_admin:tempid1@raspberrypi/BAD_FOOD" )
     end
 
 DataMapper.finalize
+#DataMapper.auto_upgrade!
+
 puts "Done!"
